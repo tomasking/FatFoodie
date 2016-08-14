@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace FatFoody.WebApi
+namespace FatFoodie.WebApi
 {
     public class Startup
     {
@@ -28,6 +28,9 @@ namespace FatFoody.WebApi
         {
             // Add framework services.
             services.AddMvc();
+
+            // Inject an implementation of ISwaggerProvider with defaulted settings applied
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +44,9 @@ namespace FatFoody.WebApi
             app.UseStaticFiles();
 
             app.UseMvc();
+
+            app.UseSwaggerGen();
+            app.UseSwaggerUi();
         }
 
         // Entry point for the application.

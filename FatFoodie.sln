@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7277D23B-40F8-4D7D-A9B4-BEDE757A4A8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2DE4762-6ED3-451A-AEEF-D13DB94EC8C4}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FatFoodie.WebApi", "src\FatFoodie.WebApi\FatFoodie.WebApi.xproj", "{32C4F666-6149-46AF-A92B-19DF544662E1}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FatFoodie.Contracts", "src\FatFoodie.Contracts\FatFoodie.Contracts.xproj", "{A9C42E61-B38E-427F-9A1B-94AAC2A4735B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32C4F666-6149-46AF-A92B-19DF544662E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32C4F666-6149-46AF-A92B-19DF544662E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32C4F666-6149-46AF-A92B-19DF544662E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32C4F666-6149-46AF-A92B-19DF544662E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C42E61-B38E-427F-9A1B-94AAC2A4735B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C42E61-B38E-427F-9A1B-94AAC2A4735B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C42E61-B38E-427F-9A1B-94AAC2A4735B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C42E61-B38E-427F-9A1B-94AAC2A4735B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{32C4F666-6149-46AF-A92B-19DF544662E1} = {7277D23B-40F8-4D7D-A9B4-BEDE757A4A8E}
+		{A9C42E61-B38E-427F-9A1B-94AAC2A4735B} = {7277D23B-40F8-4D7D-A9B4-BEDE757A4A8E}
+	EndGlobalSection
+EndGlobal
