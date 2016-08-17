@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FatFoodie.Application.Recipe;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -31,6 +32,8 @@ namespace FatFoodie.WebApi
 
             // Inject an implementation of ISwaggerProvider with defaulted settings applied
             services.AddSwaggerGen();
+
+            services.AddTransient<IRecipeService, RecipeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
