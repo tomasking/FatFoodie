@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 using FatFoodie.Application.Recipe;
 using FatFoodie.Contracts;
 using Microsoft.AspNet.Mvc;
@@ -15,15 +18,28 @@ namespace FatFoodie.WebApi.Controllers
             this.recipeService = recipeService;
         }
 
-        // GET: api/values
         [HttpGet]
-        public IEnumerable<Recipe> Get()
+        public async Task<IActionResult> Get()
         {
-            IEnumerable<Recipe> recipes = recipeService.GetAllRecipes();
-            return recipes;
+            try
+            {
+                IEnumerable<Recipe> recipes = await recipeService.GetAllRecipes();
+                return Ok(recipes);
+            }
+            catch (Exception e)
+            {
+                return
+                    HttpBadRequest(
+                        new ErrorModel()
+                        {
+                            ErrorCode = "GetAllRecipesError",
+                            ErrorMessage = e.Message,
+                            UserErrorMessage = "Oops, something went wrong!"
+                        });
+            }
         }
-        
-        // GET api/values/5
+
+        // GET api/recipe/{id}
         [HttpGet("{id}")]
         public Recipe Get(int id)
         {

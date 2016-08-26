@@ -2,8 +2,6 @@
 
 using NUnit.Framework;
 
-using Shouldly;
-
 namespace FatFoodie.UnitTests.Application.Recipe
 {
     public class RecipeServiceTests
@@ -21,7 +19,7 @@ namespace FatFoodie.UnitTests.Application.Recipe
         {
             var recipes = recipeService.GetAllRecipes();
 
-            recipes.ShouldNotBeNull();
+            Assert.That(recipes, Is.Not.Null);
         }
     }
 }

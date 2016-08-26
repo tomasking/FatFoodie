@@ -17,7 +17,8 @@
       }
     }
   },
-  "dependencies": {
-    "FatFoodie.Contracts": "1.0.0-*"
-  }
+    "dependencies": {
+        "FatFoodie.Contracts": "1.0.0-*",
+        "NUnit": "3.4.1",
+    }
 }
