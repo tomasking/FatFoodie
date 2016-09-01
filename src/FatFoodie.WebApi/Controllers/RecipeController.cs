@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
 using FatFoodie.Application.Recipe;
 using FatFoodie.Contracts;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FatFoodie.WebApi.Controllers
 {
@@ -28,8 +27,7 @@ namespace FatFoodie.WebApi.Controllers
             }
             catch (Exception e)
             {
-                return
-                    HttpBadRequest(
+                return BadRequest(
                         new ErrorModel()
                         {
                             ErrorCode = "GetAllRecipesError",

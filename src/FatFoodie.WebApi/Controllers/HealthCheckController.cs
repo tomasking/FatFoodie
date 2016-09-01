@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using FatFoodie.Contracts;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.SwaggerGen.Annotations;
 
 namespace FatFoodie.WebApi.Controllers

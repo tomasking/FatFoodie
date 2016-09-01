@@ -1,5 +1,6 @@
-﻿using FatFoodie.Application.Recipe;
+﻿
 
+using FatFoodie.Application.Recipe;
 using NUnit.Framework;
 
 namespace FatFoodie.UnitTests.Application.Recipe

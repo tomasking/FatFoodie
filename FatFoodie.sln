@@ -1,24 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7277D23B-40F8-4D7D-A9B4-BEDE757A4A8E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C21E2545-3D3F-417E-882B-55D10A983686}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2DE4762-6ED3-451A-AEEF-D13DB94EC8C4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{69C68483-BE21-42A5-820B-7D235C4D342D}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FatFoodie.WebApi", "src\FatFoodie.WebApi\FatFoodie.WebApi.xproj", "{32C4F666-6149-46AF-A92B-19DF544662E1}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FatFoodie.WebApi", "src\FatFoodie.WebApi\FatFoodie.WebApi.xproj", "{32B655BB-A8A8-4ECD-AC2D-22D7405F399C}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FatFoodie.Contracts", "src\FatFoodie.Contracts\FatFoodie.Contracts.xproj", "{A9C42E61-B38E-427F-9A1B-94AAC2A4735B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatFoodie.Contracts", "src\FatFoodie.Contracts\FatFoodie.Contracts.csproj", "{8C556DAC-1D97-4F48-B67C-597817F20947}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FatFoodie.Application", "src\FatFoodie.Application\FatFoodie.Application.xproj", "{5BF1F4F3-7023-4C2B-BF1F-BBFBE84011B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatFoodie.Application", "src\FatFoodie.Application\FatFoodie.Application.csproj", "{6F6A003D-CFCE-4663-AD57-F711A1BB103D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BF7CD159-9A96-44DE-B9DE-1DBF6DCCCDD9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1B5AA87F-F042-402A-9E13-E74D2F709DF3}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FatFoodie.UnitTests", "tests\FatFoodie.UnitTests\FatFoodie.UnitTests.xproj", "{4658AFAC-10CF-4151-BA3D-B443E4DECA7B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatFoodie.UnitTests", "tests\FatFoodie.UnitTests\FatFoodie.UnitTests.csproj", "{9CB3C5D9-6927-4425-9F49-E076EE01F19F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,30 +26,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{32C4F666-6149-46AF-A92B-19DF544662E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32C4F666-6149-46AF-A92B-19DF544662E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32C4F666-6149-46AF-A92B-19DF544662E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32C4F666-6149-46AF-A92B-19DF544662E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9C42E61-B38E-427F-9A1B-94AAC2A4735B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9C42E61-B38E-427F-9A1B-94AAC2A4735B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9C42E61-B38E-427F-9A1B-94AAC2A4735B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9C42E61-B38E-427F-9A1B-94AAC2A4735B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BF1F4F3-7023-4C2B-BF1F-BBFBE84011B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BF1F4F3-7023-4C2B-BF1F-BBFBE84011B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BF1F4F3-7023-4C2B-BF1F-BBFBE84011B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BF1F4F3-7023-4C2B-BF1F-BBFBE84011B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4658AFAC-10CF-4151-BA3D-B443E4DECA7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4658AFAC-10CF-4151-BA3D-B443E4DECA7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4658AFAC-10CF-4151-BA3D-B443E4DECA7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4658AFAC-10CF-4151-BA3D-B443E4DECA7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32B655BB-A8A8-4ECD-AC2D-22D7405F399C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32B655BB-A8A8-4ECD-AC2D-22D7405F399C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32B655BB-A8A8-4ECD-AC2D-22D7405F399C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32B655BB-A8A8-4ECD-AC2D-22D7405F399C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C556DAC-1D97-4F48-B67C-597817F20947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C556DAC-1D97-4F48-B67C-597817F20947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C556DAC-1D97-4F48-B67C-597817F20947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C556DAC-1D97-4F48-B67C-597817F20947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F6A003D-CFCE-4663-AD57-F711A1BB103D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F6A003D-CFCE-4663-AD57-F711A1BB103D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F6A003D-CFCE-4663-AD57-F711A1BB103D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F6A003D-CFCE-4663-AD57-F711A1BB103D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CB3C5D9-6927-4425-9F49-E076EE01F19F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CB3C5D9-6927-4425-9F49-E076EE01F19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CB3C5D9-6927-4425-9F49-E076EE01F19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CB3C5D9-6927-4425-9F49-E076EE01F19F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{32C4F666-6149-46AF-A92B-19DF544662E1} = {7277D23B-40F8-4D7D-A9B4-BEDE757A4A8E}
-		{A9C42E61-B38E-427F-9A1B-94AAC2A4735B} = {7277D23B-40F8-4D7D-A9B4-BEDE757A4A8E}
-		{5BF1F4F3-7023-4C2B-BF1F-BBFBE84011B2} = {7277D23B-40F8-4D7D-A9B4-BEDE757A4A8E}
-		{4658AFAC-10CF-4151-BA3D-B443E4DECA7B} = {BF7CD159-9A96-44DE-B9DE-1DBF6DCCCDD9}
+		{32B655BB-A8A8-4ECD-AC2D-22D7405F399C} = {C21E2545-3D3F-417E-882B-55D10A983686}
+		{8C556DAC-1D97-4F48-B67C-597817F20947} = {C21E2545-3D3F-417E-882B-55D10A983686}
+		{6F6A003D-CFCE-4663-AD57-F711A1BB103D} = {C21E2545-3D3F-417E-882B-55D10A983686}
+		{9CB3C5D9-6927-4425-9F49-E076EE01F19F} = {1B5AA87F-F042-402A-9E13-E74D2F709DF3}
 	EndGlobalSection
 EndGlobal

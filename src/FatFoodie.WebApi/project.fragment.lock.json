@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "exports": {
+    "FatFoodie.Application/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.2",
+      "compile": {
+        "bin/Debug/FatFoodie.Application.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/FatFoodie.Application.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/FatFoodie.Application.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "FatFoodie.Contracts/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.2",
+      "compile": {
+        "bin/Debug/FatFoodie.Contracts.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/FatFoodie.Contracts.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/FatFoodie.Contracts.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}
