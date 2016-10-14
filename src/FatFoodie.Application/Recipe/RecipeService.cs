@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using FatFoodie.Contracts.Exceptions;
 
 namespace FatFoodie.Application.Recipe
 {
@@ -9,7 +10,8 @@ namespace FatFoodie.Application.Recipe
         {
             return await Task.Run(
                 () =>
-                    {
+                {
+                    throw new DatabaseUnavailableException("db exception");
                         return new[]
                                {
                                    new Contracts.Recipe() { Id = 1, Name = "Thai Green Curry" },

@@ -20,11 +20,11 @@ namespace FatFoodie.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
+            //try
+            //{
                 IEnumerable<Recipe> recipes = await recipeService.GetAllRecipes();
                 return Ok(recipes);
-            }
+            /*}
             catch (Exception e)
             {
                 return BadRequest(
@@ -34,7 +34,7 @@ namespace FatFoodie.WebApi.Controllers
                             ErrorMessage = e.Message,
                             UserErrorMessage = "Oops, something went wrong!"
                         });
-            }
+            }*/
         }
 
         // GET api/recipe/{id}
