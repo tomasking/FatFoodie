@@ -45,9 +45,17 @@
     <Compile Include="Recipe\RecipeService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\FatFoodie.DataAccess\FatFoodie.DataAccess.csproj">
+      <Project>{fafb0246-16a4-49ff-954e-4967c2074c49}</Project>
+      <Name>FatFoodie.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FatFoodie.Contracts\FatFoodie.Contracts.csproj">
       <Project>{8c556dac-1d97-4f48-b67c-597817f20947}</Project>
       <Name>FatFoodie.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FatFoodie.Domain\FatFoodie.Domain.csproj">
+      <Project>{ce03e715-000f-48ec-a51e-c58322948388}</Project>
+      <Name>FatFoodie.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

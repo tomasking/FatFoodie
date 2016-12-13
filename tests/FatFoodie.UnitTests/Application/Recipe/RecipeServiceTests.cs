@@ -1,6 +1,7 @@
 ﻿
 
 using FatFoodie.Application.Recipe;
+using FatFoodie.DataAccess;
 using NUnit.Framework;
 
 namespace FatFoodie.UnitTests.Application.Recipe
@@ -12,7 +13,7 @@ namespace FatFoodie.UnitTests.Application.Recipe
         [SetUp]
         public void Setup()
         {
-            recipeService = new RecipeService();
+            recipeService = new RecipeService(new InMemoryRecipeRepository());
         }
 
         [Test]

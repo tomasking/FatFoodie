@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9CB3C5D9-6927-4425-9F49-E076EE01F19F}</ProjectGuid>
+    <ProjectGuid>{FAFB0246-16A4-49FF-954E-4967C2074C49}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FatFoodie.UnitTests</RootNamespace>
-    <AssemblyName>FatFoodie.UnitTests</AssemblyName>
+    <RootNamespace>FatFoodie.DataAccess</RootNamespace>
+    <AssemblyName>FatFoodie.DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.4.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NUnit.3.4.1\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -44,21 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InMemoryRecipeRepository.cs" />
+    <Compile Include="IRecipeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Application\Recipe\RecipeServiceTests.cs" />
+    <Compile Include="SqlRecipeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FatFoodie.DataAccess\FatFoodie.DataAccess.csproj">
-      <Project>{fafb0246-16a4-49ff-954e-4967c2074c49}</Project>
-      <Name>FatFoodie.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\FatFoodie.Application\FatFoodie.Application.csproj">
-      <Project>{6f6a003d-cfce-4663-ad57-f711a1bb103d}</Project>
-      <Name>FatFoodie.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\FatFoodie.Contracts\FatFoodie.Contracts.csproj">
-      <Project>{8c556dac-1d97-4f48-b67c-597817f20947}</Project>
-      <Name>FatFoodie.Contracts</Name>
+    <ProjectReference Include="..\src\FatFoodie.Domain\FatFoodie.Domain.csproj">
+      <Project>{ce03e715-000f-48ec-a51e-c58322948388}</Project>
+      <Name>FatFoodie.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
