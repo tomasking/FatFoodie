@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using AutoMapper;
 using Dapper;
+using FatFoodie.DataAccess.Pocos;
 using FatFoodie.Domain;
 
 namespace FatFoodie.DataAccess
@@ -10,7 +12,7 @@ namespace FatFoodie.DataAccess
     {
         private readonly string connectionString;
 
-        public SqlRecipeRepository(string connectionString)
+        public SqlRecipeRepository(IConfigurationSettings )
         {
             this.connectionString = connectionString;
         }
@@ -20,8 +22,9 @@ namespace FatFoodie.DataAccess
             using (var conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                IEnumerable<Recipe> resultList = conn.Query<Recipe>(@"SELECT * FROM Recipe");
-                return Task.FromResult(resultList);
+                var resultList = conn.Query<RecipePoco>(@"SELECT * FROM Recipe");
+                var recipes = Mapper.Map<IEnumerable<Recipe>>(resultList);
+                return Task.FromResult(recipes);
             }
         }
 

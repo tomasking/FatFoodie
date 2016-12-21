@@ -32,6 +32,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FatFoodie.Database", "FatFo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatFoodie.IntegrationTests", "FatFoodie.IntegrationTests\FatFoodie.IntegrationTests.csproj", "{209A4E36-B52B-4148-AADB-F7AD4C722A10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatFoodie.Infrastructure", "src\FatFoodie.Infrastructure\FatFoodie.Infrastructure.csproj", "{81B05D23-E7FC-4F56-BF2B-F68995F296B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +78,10 @@ Global
 		{209A4E36-B52B-4148-AADB-F7AD4C722A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{209A4E36-B52B-4148-AADB-F7AD4C722A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{209A4E36-B52B-4148-AADB-F7AD4C722A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81B05D23-E7FC-4F56-BF2B-F68995F296B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B05D23-E7FC-4F56-BF2B-F68995F296B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B05D23-E7FC-4F56-BF2B-F68995F296B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B05D23-E7FC-4F56-BF2B-F68995F296B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,5 +97,6 @@ Global
 		{47E2976F-D29C-4514-8D9B-AB4A18A36FCE} = {C21E2545-3D3F-417E-882B-55D10A983686}
 		{0385EF96-D9FF-403D-AF26-0E3E91891DF9} = {47E2976F-D29C-4514-8D9B-AB4A18A36FCE}
 		{209A4E36-B52B-4148-AADB-F7AD4C722A10} = {1B5AA87F-F042-402A-9E13-E74D2F709DF3}
+		{81B05D23-E7FC-4F56-BF2B-F68995F296B4} = {47E2976F-D29C-4514-8D9B-AB4A18A36FCE}
 	EndGlobalSection
 EndGlobal

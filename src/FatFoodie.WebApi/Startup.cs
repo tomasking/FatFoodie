@@ -1,7 +1,11 @@
-﻿using Castle.Windsor;
+﻿using System;
+using Castle.MicroKernel.Registration;
+using Castle.Windsor;
+using Castle.Windsor.Installer;
+using Castle.Windsor.MsDependencyInjection;
 using FatFoodie.Application.Recipe;
+using FatFoodie.Infrastructure;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,14 +26,15 @@ namespace FatFoodie.WebApi
         }
 
         public IConfigurationRoot Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
             services.AddMvc();
             services.AddSwaggerGen();
-            services.AddTransient<IRecipeService, RecipeService>();
+
+            var container = new WindsorContainer();
+            container.Install(FromAssembly.Containing<IInfrastructureRegistrationMarker>());
+            return WindsorRegistrationHelper.CreateServiceProvider(container, services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

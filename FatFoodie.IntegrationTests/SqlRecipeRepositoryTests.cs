@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FatFoodie.DataAccess;
+using FatFoodie.Domain;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -23,11 +24,27 @@ namespace FatFoodie.IntegrationTests
         }
 
         [Test]
-        public async Task ShouldReturnRecipes_WhenGetAllCalled()
+        public async Task ShouldReturnNoRecipes_WhenGetAllCalled()
         {
             var recipes = await sqlRecipeRepository.GetAll();
 
             recipes.Should().NotBeNull();
+        }
+
+        [Test]
+        public async void ShouldReturnARecipe_GivenWeHaveAddedOne()
+        {
+            var recipe = new Recipe()
+            {
+                Name = "New One"
+            };
+
+            sqlRecipeRepository.Add(recipe);
+
+            var recipes = await sqlRecipeRepository.GetAll();
+
+            recipes.Should().NotBeNull();
+            recipes.Should().Contain(r => r == recipe);
         }
     }
 }
