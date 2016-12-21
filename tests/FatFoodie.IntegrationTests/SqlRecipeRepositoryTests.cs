@@ -20,7 +20,7 @@ namespace FatFoodie.IntegrationTests
         public void Setup()
         {
             var connectionString = ConfigurationManager.ConnectionStrings["Recipe"];
-            sqlRecipeRepository = new SqlRecipeRepository(connectionString.ConnectionString);
+            sqlRecipeRepository = new SqlRecipeRepository();
         }
 
         [Test]

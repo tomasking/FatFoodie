@@ -31,11 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <HintPath>..\..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <HintPath>..\..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -56,7 +56,7 @@
     <Compile Include="SqlRecipeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\FatFoodie.Domain\FatFoodie.Domain.csproj">
+    <ProjectReference Include="..\FatFoodie.Domain\FatFoodie.Domain.csproj">
       <Project>{ce03e715-000f-48ec-a51e-c58322948388}</Project>
       <Name>FatFoodie.Domain</Name>
     </ProjectReference>

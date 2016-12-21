@@ -59,13 +59,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FatFoodie.DataAccess\FatFoodie.DataAccess.csproj">
-      <Project>{fafb0246-16a4-49ff-954e-4967c2074c49}</Project>
-      <Name>FatFoodie.DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FatFoodie.Application\FatFoodie.Application.csproj">
       <Project>{6f6a003d-cfce-4663-ad57-f711a1bb103d}</Project>
       <Name>FatFoodie.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FatFoodie.DataAccess\FatFoodie.DataAccess.csproj">
+      <Project>{fafb0246-16a4-49ff-954e-4967c2074c49}</Project>
+      <Name>FatFoodie.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

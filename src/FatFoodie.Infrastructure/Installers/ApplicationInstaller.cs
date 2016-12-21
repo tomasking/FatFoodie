@@ -2,7 +2,6 @@
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using FatFoodie.Application.Configuration;
 using FatFoodie.Application.Recipe;
 using FatFoodie.DataAccess;
 using ConfigurationSettings = FatFoodie.Infrastructure.Configuration.ConfigurationSettings;

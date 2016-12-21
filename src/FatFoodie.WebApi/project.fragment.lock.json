@@ -55,25 +55,6 @@
         }
       }
     },
-    "FatFoodie.DataAccess/1.0.0": {
-      "type": "project",
-      "framework": ".NETFramework,Version=v4.6.2",
-      "compile": {
-        "bin/Debug/FatFoodie.DataAccess.dll": {}
-      },
-      "runtime": {
-        "../packages/AutoMapper.5.2.0/lib/net45/AutoMapper.dll": {},
-        "../packages/Dapper.1.50.2/lib/net451/Dapper.dll": {},
-        "bin/Debug/FatFoodie.DataAccess.dll": {}
-      },
-      "contentFiles": {
-        "bin/Debug/FatFoodie.DataAccess.pdb": {
-          "buildAction": "None",
-          "codeLanguage": "any",
-          "copyToOutput": true
-        }
-      }
-    },
     "FatFoodie.Domain/1.0.0": {
       "type": "project",
       "framework": ".NETFramework,Version=v4.6.2",

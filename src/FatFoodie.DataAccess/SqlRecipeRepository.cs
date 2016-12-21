@@ -12,9 +12,8 @@ namespace FatFoodie.DataAccess
     {
         private readonly string connectionString;
 
-        public SqlRecipeRepository(IConfigurationSettings )
+        public SqlRecipeRepository()
         {
-            this.connectionString = connectionString;
         }
 
         public Task<IEnumerable<Recipe>> GetAll()

@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
-using System.Text;
+
 using FatFoodie.Contracts;
+
+using FluentAssertions;
+
 using RestSharp;
-using Should;
+
 using TechTalk.SpecFlow;
 
 namespace FatFoodie.AcceptanceTests.Steps
@@ -33,10 +34,10 @@ namespace FatFoodie.AcceptanceTests.Steps
         {
             var restResponse = ScenarioContext.Current.Get<IRestResponse<List<Recipe>>>();
 
-            restResponse.StatusCode.ShouldEqual(HttpStatusCode.OK);
+            restResponse.StatusCode.Should().Be(HttpStatusCode.OK);
             var recipes = restResponse.Data;
-            recipes.ShouldNotBeNull();
-            recipes.ShouldNotBeEmpty();
+            recipes.Should().NotBeNull();
+            recipes.Should().NotBeEmpty();
         }
     }
 }
