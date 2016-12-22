@@ -17,8 +17,9 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\FatFoodie.Application\FatFoodie.Application.csproj" />
+    <ProjectReference Include="..\FatFoodie.Configuration\FatFoodie.Configuration.csproj" />
     <ProjectReference Include="..\FatFoodie.Contracts\FatFoodie.Contracts.csproj" />
-    <ProjectReference Include="..\FatFoodie.Infrastructure\FatFoodie.Infrastructure.csproj" />
+    <ProjectReference Include="..\FatFoodie.IoC\FatFoodie.IoC.csproj" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>

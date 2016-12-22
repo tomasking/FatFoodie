@@ -3,6 +3,8 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using AutoMapper;
 using Dapper;
+
+using FatFoodie.Configuration;
 using FatFoodie.DataAccess.Pocos;
 using FatFoodie.Domain;
 
@@ -10,15 +12,16 @@ namespace FatFoodie.DataAccess
 {
     public class SqlRecipeRepository : IRecipeRepository
     {
-        private readonly string connectionString;
+        public readonly string ConnectionString;
 
-        public SqlRecipeRepository()
+        public SqlRecipeRepository(IConfigurationSettings configurationSettings)
         {
+            ConnectionString = configurationSettings.RecipeConnectionString;
         }
 
         public Task<IEnumerable<Recipe>> GetAll()
         {
-            using (var conn = new SqlConnection(connectionString))
+            using (var conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
                 var resultList = conn.Query<RecipePoco>(@"SELECT * FROM Recipe");

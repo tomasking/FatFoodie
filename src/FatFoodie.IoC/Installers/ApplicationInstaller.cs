@@ -1,13 +1,12 @@
-﻿using System;
-using Castle.MicroKernel.Registration;
+﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using FatFoodie.Application.Recipe;
-using FatFoodie.DataAccess;
-using ConfigurationSettings = FatFoodie.Infrastructure.Configuration.ConfigurationSettings;
-using IConfigurationSettings = FatFoodie.Infrastructure.Configuration.IConfigurationSettings;
 
-namespace FatFoodie.Infrastructure.Installers
+using FatFoodie.Application.Recipe;
+using FatFoodie.Configuration;
+using FatFoodie.DataAccess;
+
+namespace FatFoodie.IoC.Installers
 {
     public class ApplicationInstaller : IWindsorInstaller
     {

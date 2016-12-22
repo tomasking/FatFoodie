@@ -4,9 +4,14 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using FatFoodie.Configuration;
 using FatFoodie.DataAccess;
 using FatFoodie.Domain;
 using FluentAssertions;
+
+using NSubstitute;
+
 using NUnit.Framework;
 
 namespace FatFoodie.IntegrationTests
@@ -20,7 +25,10 @@ namespace FatFoodie.IntegrationTests
         public void Setup()
         {
             var connectionString = ConfigurationManager.ConnectionStrings["Recipe"];
-            sqlRecipeRepository = new SqlRecipeRepository();
+            IConfigurationSettings configurationSettings = Substitute.For<IConfigurationSettings>();
+            configurationSettings.RecipeConnectionString.Returns(connectionString.ConnectionString);
+
+            sqlRecipeRepository = new SqlRecipeRepository(configurationSettings);
         }
 
         [Test]
@@ -32,7 +40,7 @@ namespace FatFoodie.IntegrationTests
         }
 
         [Test]
-        public async void ShouldReturnARecipe_GivenWeHaveAddedOne()
+        public async Task ShouldReturnARecipe_GivenWeHaveAddedOne()
         {
             var recipe = new Recipe()
             {

@@ -34,6 +34,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatFoodie.AcceptanceTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatFoodie.IntegrationTests", "tests\FatFoodie.IntegrationTests\FatFoodie.IntegrationTests.csproj", "{209A4E36-B52B-4148-AADB-F7AD4C722A10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatFoodie.IoC", "src\FatFoodie.IoC\FatFoodie.IoC.csproj", "{04B97245-CCE5-4F5F-9414-E727796F7612}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatFoodie.Configuration", "src\FatFoodie.Configuration\FatFoodie.Configuration.csproj", "{33BD55BF-BAD2-41C8-BCF8-40FD8DD2078F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +86,14 @@ Global
 		{209A4E36-B52B-4148-AADB-F7AD4C722A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{209A4E36-B52B-4148-AADB-F7AD4C722A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{209A4E36-B52B-4148-AADB-F7AD4C722A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04B97245-CCE5-4F5F-9414-E727796F7612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B97245-CCE5-4F5F-9414-E727796F7612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04B97245-CCE5-4F5F-9414-E727796F7612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04B97245-CCE5-4F5F-9414-E727796F7612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33BD55BF-BAD2-41C8-BCF8-40FD8DD2078F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33BD55BF-BAD2-41C8-BCF8-40FD8DD2078F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33BD55BF-BAD2-41C8-BCF8-40FD8DD2078F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33BD55BF-BAD2-41C8-BCF8-40FD8DD2078F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,5 +110,7 @@ Global
 		{FAFB0246-16A4-49FF-954E-4967C2074C49} = {C21E2545-3D3F-417E-882B-55D10A983686}
 		{594A956D-1857-42CD-A9AA-BBE46CF108FA} = {1B5AA87F-F042-402A-9E13-E74D2F709DF3}
 		{209A4E36-B52B-4148-AADB-F7AD4C722A10} = {1B5AA87F-F042-402A-9E13-E74D2F709DF3}
+		{04B97245-CCE5-4F5F-9414-E727796F7612} = {47E2976F-D29C-4514-8D9B-AB4A18A36FCE}
+		{33BD55BF-BAD2-41C8-BCF8-40FD8DD2078F} = {47E2976F-D29C-4514-8D9B-AB4A18A36FCE}
 	EndGlobalSection
 EndGlobal

@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
+
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 
-namespace FatFoodie.Infrastructure.Installers
+namespace FatFoodie.IoC.Installers
 {
     public class MapperInstaller : IWindsorInstaller
     {

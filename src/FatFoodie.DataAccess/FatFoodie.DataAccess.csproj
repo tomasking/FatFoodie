@@ -56,12 +56,17 @@
     <Compile Include="SqlRecipeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FatFoodie.Configuration\FatFoodie.Configuration.csproj">
+      <Project>{33bd55bf-bad2-41c8-bcf8-40fd8dd2078f}</Project>
+      <Name>FatFoodie.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FatFoodie.Domain\FatFoodie.Domain.csproj">
       <Project>{ce03e715-000f-48ec-a51e-c58322948388}</Project>
       <Name>FatFoodie.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
