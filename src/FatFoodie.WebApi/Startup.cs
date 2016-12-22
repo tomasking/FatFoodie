@@ -1,4 +1,7 @@
 ﻿using System;
+
+using AutoMapper;
+
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
@@ -11,7 +14,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyModel;
 using Microsoft.Extensions.Logging;
+
+using IConfigurationProvider = AutoMapper.IConfigurationProvider;
 
 namespace FatFoodie.WebApi
 {
@@ -33,10 +39,11 @@ namespace FatFoodie.WebApi
         {
             services.AddMvc();
             services.AddSwaggerGen();
-
+            
             var container = new WindsorContainer();
             container.Install(FromAssembly.Containing<IIocAssemblyRegistrationMarker>());
             container.Register(Component.For<IConfigurationRoot>().Instance(Configuration).LifestyleSingleton());
+
             return WindsorRegistrationHelper.CreateServiceProvider(container, services);
         }
 

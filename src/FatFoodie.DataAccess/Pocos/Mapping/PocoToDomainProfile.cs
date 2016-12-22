@@ -7,12 +7,7 @@ namespace FatFoodie.DataAccess.Pocos.Mapping
     {
         public PocoToDomainProfile()
         {
-            
-        }
-
-        public void SomethingPocoToDomainProfile()
-        {
-            Mapper.Initialize(cfg => cfg.CreateMap<RecipePoco, Recipe>());
+            CreateMap<RecipePoco, Recipe>();
         }
     }
 }

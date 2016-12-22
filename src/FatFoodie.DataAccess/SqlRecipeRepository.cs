@@ -12,10 +12,13 @@ namespace FatFoodie.DataAccess
 {
     public class SqlRecipeRepository : IRecipeRepository
     {
+        private readonly IMapper mapper;
+
         public readonly string ConnectionString;
 
-        public SqlRecipeRepository(IConfigurationSettings configurationSettings)
+        public SqlRecipeRepository(IConfigurationSettings configurationSettings, IMapper mapper)
         {
+            this.mapper = mapper;
             ConnectionString = configurationSettings.RecipeConnectionString;
         }
 
@@ -25,7 +28,8 @@ namespace FatFoodie.DataAccess
             {
                 conn.Open();
                 var resultList = conn.Query<RecipePoco>(@"SELECT * FROM Recipe");
-                var recipes = Mapper.Map<IEnumerable<Recipe>>(resultList);
+
+                var recipes = mapper.Map<IEnumerable<Recipe>>(resultList);
                 return Task.FromResult(recipes);
             }
         }

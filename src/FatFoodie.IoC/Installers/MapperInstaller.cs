@@ -4,6 +4,8 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 
+using FatFoodie.DataAccess;
+
 namespace FatFoodie.IoC.Installers
 {
     public class MapperInstaller : IWindsorInstaller
@@ -11,11 +13,8 @@ namespace FatFoodie.IoC.Installers
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(
-                Classes
-                    .FromThisAssembly()
-                    .BasedOn(typeof(Profile))
-                    .WithServiceBase()
-                    .LifestyleTransient());
+            Component.For<IMapper>().UsingFactoryMethod(x =>
+                { return new MapperConfiguration(cfg => { cfg.AddProfiles(new[] { typeof(IDataAccessRegistrationMarker) }); }).CreateMapper(); }));
         }
     }
 }

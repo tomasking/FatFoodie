@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IIocAssemblyRegistrationMarker.cs" />
     <Compile Include="InMemoryRecipeRepository.cs" />
     <Compile Include="IRecipeRepository.cs" />
     <Compile Include="Pocos\Mapping\PocoToDomainProfile.cs" />
