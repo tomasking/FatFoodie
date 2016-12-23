@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+
+using AutoMapper;
 
 using FatFoodie.Configuration;
 using FatFoodie.DataAccess;
@@ -27,12 +26,13 @@ namespace FatFoodie.IntegrationTests
             var connectionString = ConfigurationManager.ConnectionStrings["Recipe"];
             IConfigurationSettings configurationSettings = Substitute.For<IConfigurationSettings>();
             configurationSettings.RecipeConnectionString.Returns(connectionString.ConnectionString);
+            var mapper = new MapperConfiguration(cfg => { cfg.AddProfiles(typeof(IDataAccessRegistrationMarker)); }).CreateMapper();
 
-            sqlRecipeRepository = new SqlRecipeRepository(configurationSettings);
+            sqlRecipeRepository = new SqlRecipeRepository(configurationSettings, mapper);
         }
 
         [Test]
-        public async Task ShouldReturnNoRecipes_WhenGetAllCalled()
+        public async Task ShouldNotBeNull_WhenGetAllCalled()
         {
             var recipes = await sqlRecipeRepository.GetAll();
 
@@ -40,19 +40,28 @@ namespace FatFoodie.IntegrationTests
         }
 
         [Test]
-        public async Task ShouldReturnARecipe_GivenWeHaveAddedOne()
+        public void ShouldBeAbleToRetrieveRecipe_GivenWeHaveAddedOne()
         {
-            var recipe = new Recipe()
-            {
-                Name = "New One"
-            };
+            var recipe = new Recipe { Name = "New One" };
 
             sqlRecipeRepository.Add(recipe);
+            recipe.RecipeId.Should().NotBeNull();
 
-            var recipes = await sqlRecipeRepository.GetAll();
+            var retrievedRecipe = sqlRecipeRepository.GetById(recipe.RecipeId.Value);
+            retrievedRecipe.Should().NotBeNull();
+            retrievedRecipe.Should().Be(recipe);
+        }
 
-            recipes.Should().NotBeNull();
-            recipes.Should().Contain(r => r == recipe);
+        [Test]
+        public void ShouldDeleteItem_GivenWeHaveAddedOne()
+        {
+            var recipe = new Recipe { Name = Guid.NewGuid().ToString() };
+            sqlRecipeRepository.Add(recipe);
+            
+            sqlRecipeRepository.Delete(recipe.RecipeId.Value);
+
+            var deletedRecipe = sqlRecipeRepository.GetById(recipe.RecipeId.Value);
+            deletedRecipe.Should().BeNull();
         }
     }
 }

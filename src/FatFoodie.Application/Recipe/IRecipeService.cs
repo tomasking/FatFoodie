@@ -5,8 +5,8 @@ namespace FatFoodie.Application.Recipe
 {
     public interface IRecipeService
     {
-        Task<IEnumerable<Contracts.Recipe>> GetAllRecipes();
+        Task<IEnumerable<Domain.Recipe>> GetAllRecipes();
 
-        Contracts.Recipe GetRecipesById(int id);
+        Domain.Recipe GetRecipesById(int id);
     }
 }

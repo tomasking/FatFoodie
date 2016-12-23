@@ -32,6 +32,9 @@
                 "FatFoodie.Contracts": {
                     "target": "project"
                 },
+                "FatFoodie.Domain": {
+                    "target": "project"
+                },
                 "FatFoodie.IoC": {
                     "target": "project"
                 }

@@ -5,6 +5,7 @@ using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 
 using FatFoodie.DataAccess;
+using FatFoodie.Infrastructure;
 
 namespace FatFoodie.IoC.Installers
 {
@@ -14,7 +15,7 @@ namespace FatFoodie.IoC.Installers
         {
             container.Register(
             Component.For<IMapper>().UsingFactoryMethod(x =>
-                { return new MapperConfiguration(cfg => { cfg.AddProfiles(new[] { typeof(IDataAccessRegistrationMarker) }); }).CreateMapper(); }));
+                { return new MapperConfiguration(cfg => { cfg.AddProfiles(new[] { typeof(IInfrastructureRegistrationMarker) }); }).CreateMapper(); }));
         }
     }
 }

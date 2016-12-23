@@ -63,5 +63,14 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Recipe.sql" />
+    <Build Include="dbo\StoredProcs\spRecipeGet.sql" />
+    <Build Include="dbo\StoredProcs\spRecipeInsert.sql" />
+    <Build Include="dbo\StoredProcs\spRecipeDelete.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LOCAL.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="FatFoodie.Database.refactorlog" />
   </ItemGroup>
 </Project>

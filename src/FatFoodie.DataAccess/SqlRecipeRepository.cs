@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Dapper;
@@ -22,31 +24,43 @@ namespace FatFoodie.DataAccess
             ConnectionString = configurationSettings.RecipeConnectionString;
         }
 
-        public Task<IEnumerable<Recipe>> GetAll()
+        public async Task<IEnumerable<Recipe>> GetAll()
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
-                var resultList = conn.Query<RecipePoco>(@"SELECT * FROM Recipe");
+                var resultList = await conn.QueryAsync<RecipePocoWithId>(@"SELECT * FROM Recipe");
 
                 var recipes = mapper.Map<IEnumerable<Recipe>>(resultList);
-                return Task.FromResult(recipes);
+                return recipes;
             }
         }
 
-        public Recipe GetById(int recipeId)
+        public async Task<Recipe> GetById(int recipeId)
         {
-            throw new System.NotImplementedException();
+            using (var conn = new SqlConnection(ConnectionString))
+            {
+                var recipePoco = await conn.QueryAsync<RecipePocoWithId>("spRecipeGet", new { RecipeId = recipeId }, commandType: CommandType.StoredProcedure);
+                return mapper.Map<Recipe>(recipePoco.Single());
+            }
         }
 
-        public void Add(Recipe recipe)
+        public async Task Add(Recipe recipe)
         {
-            throw new System.NotImplementedException();
+            using (var conn = new SqlConnection(ConnectionString))
+            { 
+                var recipePoco = mapper.Map<RecipePoco>(recipe);
+                var returnValues = await conn.QueryAsync<int>("spRecipeInsert", recipePoco, commandType: CommandType.StoredProcedure);
+                recipe.RecipeId = returnValues.Single();
+            }
         }
 
-        public void Delete(int recipeId)
+        public async Task Delete(int recipeId)
         {
-            throw new System.NotImplementedException();
+            using (var conn = new SqlConnection(ConnectionString))
+            {
+                await conn.ExecuteAsync("spRecipeDelete", new { RecipeId = recipeId }, commandType: CommandType.StoredProcedure);
+            }
         }
     }
 }

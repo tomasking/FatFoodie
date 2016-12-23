@@ -2,6 +2,9 @@
 
 using FatFoodie.Application.Recipe;
 using FatFoodie.DataAccess;
+
+using FluentAssertions;
+
 using NUnit.Framework;
 
 namespace FatFoodie.UnitTests.Application.Recipe
@@ -21,7 +24,7 @@ namespace FatFoodie.UnitTests.Application.Recipe
         {
             var recipes = recipeService.GetAllRecipes();
 
-            Assert.That(recipes, Is.Not.Null);
+            recipes.Should().NotBeNull();
         }
     }
 }

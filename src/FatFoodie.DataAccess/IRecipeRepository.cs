@@ -9,10 +9,10 @@ namespace FatFoodie.DataAccess
     {
         Task<IEnumerable<Recipe>> GetAll();
 
-        Recipe GetById(int recipeId);
+        Task<Recipe> GetById(int recipeId);
 
-        void Add(Recipe recipe);
+        Task Add(Recipe recipe);
 
-        void Delete(int recipeId);
+        Task Delete(int recipeId);
     }
 }

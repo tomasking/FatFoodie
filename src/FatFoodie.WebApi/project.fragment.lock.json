@@ -79,6 +79,23 @@
         }
       }
     },
+    "FatFoodie.Domain/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.2",
+      "compile": {
+        "bin/Debug/FatFoodie.Domain.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/FatFoodie.Domain.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/FatFoodie.Domain.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
     "FatFoodie.IoC/1.0.0": {
       "type": "project",
       "framework": ".NETFramework,Version=v4.6.2",
@@ -112,23 +129,6 @@
       },
       "contentFiles": {
         "bin/Debug/FatFoodie.DataAccess.pdb": {
-          "buildAction": "None",
-          "codeLanguage": "any",
-          "copyToOutput": true
-        }
-      }
-    },
-    "FatFoodie.Domain/1.0.0": {
-      "type": "project",
-      "framework": ".NETFramework,Version=v4.6.2",
-      "compile": {
-        "bin/Debug/FatFoodie.Domain.dll": {}
-      },
-      "runtime": {
-        "bin/Debug/FatFoodie.Domain.dll": {}
-      },
-      "contentFiles": {
-        "bin/Debug/FatFoodie.Domain.pdb": {
           "buildAction": "None",
           "codeLanguage": "any",
           "copyToOutput": true

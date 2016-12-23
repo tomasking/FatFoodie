@@ -14,7 +14,7 @@ namespace FatFoodie.Application.Recipe
             this.recipeRepository = recipeRepository;
         }
 
-        public async Task<IEnumerable<Contracts.Recipe>> GetAllRecipes()
+        public async Task<IEnumerable<Domain.Recipe>> GetAllRecipes()
         {
             var domainRecipes = await recipeRepository.GetAll();
 
@@ -23,17 +23,17 @@ namespace FatFoodie.Application.Recipe
             return recipesDtos;
         }
 
-        private IEnumerable<Contracts.Recipe> Map(IEnumerable<Domain.Recipe> recipes)
+        private IEnumerable<Domain.Recipe> Map(IEnumerable<Domain.Recipe> recipes)
         {
-            return recipes.Select(recipe => new Contracts.Recipe()
+            return recipes.Select(recipe => new Domain.Recipe()
             {
-                Id = recipe.Id, Name = recipe.Name
+                RecipeId = recipe.RecipeId.Value, Name = recipe.Name
             }).ToList();
         }
 
-        public Contracts.Recipe GetRecipesById(int id)
+        public Domain.Recipe GetRecipesById(int id)
         {
-            return new Contracts.Recipe() { Id = 1, Name = "Thai Green Curry" };
+            return new Domain.Recipe() { RecipeId = 1, Name = "Thai Green Curry" };
         }
     }
 }

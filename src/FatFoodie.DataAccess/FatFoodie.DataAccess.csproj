@@ -51,8 +51,8 @@
     <Compile Include="IIocAssemblyRegistrationMarker.cs" />
     <Compile Include="InMemoryRecipeRepository.cs" />
     <Compile Include="IRecipeRepository.cs" />
-    <Compile Include="Pocos\Mapping\PocoToDomainProfile.cs" />
     <Compile Include="Pocos\RecipePoco.cs" />
+    <Compile Include="Pocos\RecipePocoWithId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlRecipeRepository.cs" />
   </ItemGroup>
