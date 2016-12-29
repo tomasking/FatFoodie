@@ -327,10 +327,6 @@
       <Project>{04b97245-cce5-4f5f-9414-e727796f7612}</Project>
       <Name>FatFoodie.IoC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\FatFoodie.WebApi\FatFoodie.WebApi.xproj">
-      <Project>{32b655bb-a8a8-4ecd-ac2d-22d7405f399c}</Project>
-      <Name>FatFoodie.WebApi</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
