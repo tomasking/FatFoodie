@@ -46,10 +46,18 @@ namespace FatFoodie.Api.Controllers
 
         // GET api/recipe/{id}
         [HttpGet]
-        public Recipe Get(int id)
+        public async Task<IHttpActionResult> Get(int id)
         {
-            var recipe = recipeService.GetRecipesById(id);
-            return mapper.Map<Recipe>(recipe);
+            var recipe = await recipeService.GetRecipesById(id);
+            return Ok(mapper.Map<Recipe>(recipe));
+        }
+
+        [HttpPost]
+        public async Task<IHttpActionResult> Post([FromBody]Recipe recipe)
+        {
+            var mapperRequest = mapper.Map<Domain.Recipe>(recipe);
+            var recipeResponse = await recipeService.AddOrUpdateRecipe(mapperRequest);
+            return Ok(mapper.Map<Recipe>(recipeResponse));
         }
     }
 }

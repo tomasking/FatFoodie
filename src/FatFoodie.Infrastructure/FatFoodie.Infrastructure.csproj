@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IInfrastructureRegistrationMarker.cs" />
+    <Compile Include="Mapping\ContractToDomainProfile.cs" />
     <Compile Include="Mapping\DomainToContractProfile.cs" />
     <Compile Include="Mapping\PocoToDomainProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

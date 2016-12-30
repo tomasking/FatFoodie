@@ -7,6 +7,8 @@ namespace FatFoodie.Application.Recipe
     {
         Task<IEnumerable<Domain.Recipe>> GetAllRecipes();
 
-        Domain.Recipe GetRecipesById(int id);
+        Task<Domain.Recipe> GetRecipesById(int id);
+
+        Task<Domain.Recipe> AddOrUpdateRecipe(Domain.Recipe recipe);
     }
 }

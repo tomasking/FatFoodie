@@ -17,23 +17,19 @@ namespace FatFoodie.Application.Recipe
         public async Task<IEnumerable<Domain.Recipe>> GetAllRecipes()
         {
             var domainRecipes = await recipeRepository.GetAll();
-
-            var recipesDtos = Map(domainRecipes);
-
-            return recipesDtos;
+            return domainRecipes;
+        }
+        
+        public async Task<Domain.Recipe> GetRecipesById(int id)
+        {
+            var recipeResponse = await recipeRepository.GetById(id);
+            return recipeResponse;
         }
 
-        private IEnumerable<Domain.Recipe> Map(IEnumerable<Domain.Recipe> recipes)
+        public async Task<Domain.Recipe> AddOrUpdateRecipe(Domain.Recipe recipe)
         {
-            return recipes.Select(recipe => new Domain.Recipe()
-            {
-                RecipeId = recipe.RecipeId.Value, Name = recipe.Name
-            }).ToList();
-        }
-
-        public Domain.Recipe GetRecipesById(int id)
-        {
-            return new Domain.Recipe() { RecipeId = 1, Name = "Thai Green Curry" };
+            var recipeResponse = await recipeRepository.Add(recipe);
+            return recipeResponse;
         }
     }
 }

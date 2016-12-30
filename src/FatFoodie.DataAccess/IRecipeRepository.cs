@@ -11,7 +11,7 @@ namespace FatFoodie.DataAccess
 
         Task<Recipe> GetById(int recipeId);
 
-        Task Add(Recipe recipe);
+        Task<Recipe> Add(Recipe recipe);
 
         Task Delete(int recipeId);
     }

@@ -102,7 +102,9 @@
     <Compile Include="Http\HttpApiWrapper.cs" />
     <Compile Include="LocalDb\DatabaseExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps\RecipesSteps.cs" />
+    <Compile Include="Steps\RecipesRequestSteps.cs" />
+    <Compile Include="Steps\RecipesResponseSteps.cs" />
+    <Compile Include="Steps\ScenarioContextConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LocalDb\FatFoodie.Database.dacpac">

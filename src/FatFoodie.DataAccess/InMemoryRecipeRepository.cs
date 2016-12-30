@@ -17,17 +17,17 @@ namespace FatFoodie.DataAccess
                 });
         }
         
-        Task<Recipe> IRecipeRepository.GetById(int recipeId)
+        public Task<Recipe> GetById(int recipeId)
         {
             throw new NotImplementedException();
         }
 
-        Task IRecipeRepository.Add(Recipe recipe)
+        public Task<Recipe> Add(Recipe recipe)
         {
             throw new NotImplementedException();
         }
 
-        Task IRecipeRepository.Delete(int recipeId)
+        public Task Delete(int recipeId)
         {
             throw new NotImplementedException();
         }

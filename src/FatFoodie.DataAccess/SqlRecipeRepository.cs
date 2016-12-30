@@ -45,13 +45,14 @@ namespace FatFoodie.DataAccess
             }
         }
 
-        public async Task Add(Recipe recipe)
+        public async Task<Recipe> Add(Recipe recipe)
         {
             using (var conn = new SqlConnection(ConnectionString))
             { 
                 var recipePoco = mapper.Map<RecipePoco>(recipe);
                 var returnValues = await conn.QueryAsync<int>("spRecipeInsert", recipePoco, commandType: CommandType.StoredProcedure);
                 recipe.RecipeId = returnValues.Single();
+                return recipe;
             }
         }
 

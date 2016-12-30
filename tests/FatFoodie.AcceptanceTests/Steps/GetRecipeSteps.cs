@@ -24,7 +24,7 @@ namespace FatFoodie.AcceptanceTests.Steps
         public void WhenIGetAListOfAllRecipes()
         {
             var client = new RestClient("http://localhost:5000/");
-            var request = new RestRequest("api/recipe", Method.GET);
+            var request = new RestRequest("api/recipes", Method.GET);
 
             ScenarioContext.Current.Set(client.Execute<List<Recipe>>(request));
         }
